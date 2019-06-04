@@ -1,4 +1,19 @@
 $(document).ready(function() {
+    
+    $(".bottom_button").mouseenter(function(){
+        $(".bottom_button").fadeTo(400, 0.5, );
+    });
+    $(".bottom_button").mouseleave(function(){
+        $(".bottom_button").fadeTo(400, 1.0);
+    });
+    $(".bottom_button").click(function() {
+        $('#para1').slideToggle('500');
+        $('#para2').slideToggle('500');
+        $('#para3').slideToggle('500');
+        $('#para4').slideToggle('500');
+        $('#para5').slideToggle('500');
+        $('#para6').slideToggle('500');
+    });
     $("p").on("click", function() {
         $("p").addClass("highlight_stream");
     });
