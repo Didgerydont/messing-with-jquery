@@ -1,9 +1,24 @@
 $(document).ready(function() {
     
-    $(".bottom_button").mouseenter(function(){
+    $(".stream-nav").on("click", function() {
+        // A selector to match all cards in all streams
+        var allStreamsCardsSelector = ".card";
+        // A selector to match just this stream's cards
+        // for this, we use the class with the name of the stream,
+        // which is the same as this nav link's id and then the "-card" suffix.
+        var thisStreamCardsSelector = "." + this.id + "-card";
+
+        // First remove the highlight from all of the cards
+        $(allStreamsCardsSelector).removeClass("card-highlight");
+        // Then apply the highlight to just this stream's cards
+        $(thisStreamCardsSelector).addClass("card-highlight");
+    });
+    
+    
+    $(".bottom_button").mouseenter(function() {
         $(".bottom_button").fadeTo(400, 0.5, );
     });
-    $(".bottom_button").mouseleave(function(){
+    $(".bottom_button").mouseleave(function() {
         $(".bottom_button").fadeTo(400, 1.0);
     });
     $(".bottom_button").click(function() {
@@ -14,9 +29,12 @@ $(document).ready(function() {
         $('#para5').slideToggle('500');
         $('#para6').slideToggle('500');
     });
-    $("p").on("click", function() {
-        $("p").addClass("highlight_stream");
-    });
+
+
+
+    
+    
+    
     $("h2").on("click", function() {
         $("h2").css("background-color", "lightblue");
     });
@@ -74,10 +92,10 @@ $(document).ready(function() {
         $("#hr_html").removeClass("h2_font_size");
         $("#hr_css").addClass("h2_font_size");
     });
-    $(".bottom_button").mouseenter(function(){
-       $("body").css("background-color", "black"); 
+    $(".bottom_button").mouseenter(function() {
+        $("body").css("background-color", "black");
     });
-    $(".bottom_button").mouseleave(function(){
-        $("body").css( "background-color", "#eee"); 
+    $(".bottom_button").mouseleave(function() {
+        $("body").css("background-color", "#eee");
     });
 });
